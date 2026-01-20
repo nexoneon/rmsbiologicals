@@ -1,0 +1,411 @@
+
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - RBS Biologicals</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="app">
+            <header class="header">
+        <div class="top-bar">
+            <div class="container">
+                <p class="registration-address">RBS Biologicals, Guntur, Andhra Pradesh, INDIA</p>
+            </div>
+        </div>
+        
+        <nav class="main-nav">
+            <div class="container">
+                <div class="nav-content">
+                    <a href="index.html" class="logo">
+                        <img src="images/logo.PNG" alt="RBS Biologicals Logo" class="logo-img">
+                        <h1>RBS Biologicals</h1>
+                    </a>
+                    
+                    <button class="mobile-menu-toggle" onclick="toggleMobileMenu()" aria-label="Toggle mobile menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                    
+                    <ul class="nav-menu" id="navMenu">
+                        <li><a href="index.html" class="">HOME</a></li>
+                        <li><a href="about.html" class="">ABOUT US</a></li>
+                        <!-- <li><a href="categories.html" class="">CATEGORIES</a></li> -->
+                        <li><a href="products.html" class="">PRODUCTS</a></li>
+                        <li><a href="blog.html" class="active">BLOG</a></li>
+                        <li><a href="gallery.html" class="">GALLERY</a></li>
+                        <li><a href="contact.html" class="">CONTACT</a></li>
+                        
+                        <!-- <li class="nav-actions">
+                            <a href="mailto:info@aabtgroup.in" class="mail-btn">MAIL US</a>
+                            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="whatsapp-btn">
+                                <span class="whatsapp-icon">💬</span>
+                            </a>
+                        </li> -->
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </header>
+            
+        <main class="main-content">
+            <div class="page-header">
+                <div class="container">
+                    <h1>Our Blog</h1>
+                    <p class="page-subtitle">Industry insights, best practices, and company updates</p>
+                </div>
+            </div>
+            <div class="container">
+                
+                
+                                
+                <div class="blog-categories">
+                    <button class="category-btn glossy-badge glossy-badge-blue active" onclick="filterBlogPosts('all')">All</button>
+                                            <button class="category-btn glossy-badge glossy-badge-blue" onclick="filterBlogPosts('Aqua')">
+                            Aqua                        </button>
+                                            <button class="category-btn glossy-badge glossy-badge-blue" onclick="filterBlogPosts('Poultry Health Care')">
+                            Poultry Health Care                        </button>
+                                    </div>
+                
+                <div class="blog-grid-full">
+                                            <article class="blog-card-full glossy-card" data-category="aqua">
+                            <div class="blog-image-large">
+                                                                    <span class="blog-emoji-large">📝</span>
+                                                            </div>
+                            <div class="blog-content-full">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Aqua</span>
+                                    <span class="blog-date">January 20, 2026</span>
+                                </div>
+                                <h2>Best Practices in Shrimp Farming</h2>
+                                <p class="blog-excerpt">Learn about the latest techniques and best practices for successful shrimp farming operations.</p>
+                                <div class="blog-content-text">
+                                    <p>Shrimp farming requires careful attention to water quality, feeding schedules, and disease prevention. This comprehensive guide covers all essential aspects of modern shrimp aquaculture.</p>
+                                </div>
+                                <div class="blog-actions">
+                                    <a href="#" class="blog-link">Read More →</a>
+                                    <div class="blog-share">
+                                        <button class="share-btn" onclick="sharePost('1')">Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                                            <article class="blog-card-full glossy-card" data-category="poultry health care">
+                            <div class="blog-image-large">
+                                                                    <span class="blog-emoji-large">📝</span>
+                                                            </div>
+                            <div class="blog-content-full">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Poultry Health Care</span>
+                                    <span class="blog-date">January 20, 2026</span>
+                                </div>
+                                <h2>Poultry Health Management Guide</h2>
+                                <p class="blog-excerpt">Comprehensive guide to maintaining optimal health in poultry farms and preventing common diseases.</p>
+                                <div class="blog-content-text">
+                                    <p>Effective poultry health management involves vaccination programs, biosecurity measures, and proper nutrition. Learn the key strategies for maintaining healthy flocks.</p>
+                                </div>
+                                <div class="blog-actions">
+                                    <a href="#" class="blog-link">Read More →</a>
+                                    <div class="blog-share">
+                                        <button class="share-btn" onclick="sharePost('2')">Share</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
+                                    </div>
+                
+                <section class="blog-newsletter">
+                    <div class="newsletter-content">
+                        <h2>Stay Updated</h2>
+                        <p>Subscribe to our newsletter for the latest industry insights and company updates.</p>
+                        <form class="newsletter-form" onsubmit="subscribeNewsletter(event)">
+                            <input type="email" placeholder="Enter your email address" required>
+                            <button type="submit" class="btn btn-primary">Subscribe</button>
+                        </form>
+                    </div>
+                </section>
+                
+                <section class="blog-categories-info">
+                    <h2>Blog Categories</h2>
+                    <div class="category-info-grid">
+                                                    <div class="category-info-card">
+                                <h3>icon-shrimp Aqua</h3>
+                                <p>Comprehensive range of prawn, shrimp, crab, and fish health care products</p>
+                            </div>
+                                                    <div class="category-info-card">
+                                <h3>icon-chicken Poultry Health Care</h3>
+                                <p>Specialized products for broilers, turkeys, and feed supplements</p>
+                            </div>
+                                            </div>
+                </section>
+            </div>
+        </main>
+        
+            <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Product Categories</h3>
+                    <ul class="footer-links">
+                        <li><a href="products.html?category=Aqua">Aqua</a></li><li><a href="products.html?category=Poultry+Health+Care">Poultry Health Care</a></li>                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Recent Posts</h3>
+                    <ul class="footer-links">
+                        <li><a href="blog.html#aquaculture">Aquaculture Best Practices</a></li>
+                        <li><a href="blog.html#poultry">Poultry Health Management</a></li>
+                        <li><a href="blog.html#events">Industry Events & Updates</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Contact Information</h3>
+                    <div class="contact-info">
+                        <p><strong>RBS Biologicals</strong></p>
+                        <p>Guntur, Andhra Pradesh</p>
+                        <p>INDIA - 520001</p>
+                        <p class="contact-item">
+                            <a href="mailto:info@aabtgroup.in">info@aabtgroup.in</a>
+                        </p>
+                        <p class="contact-item">
+                            <a href="tel:+91 99999 99999">+91 99999 99999</a>
+                        </p>
+                        <div class="social-links">
+                            <a href="https://wa.me/919999999999" target="_blank" rel="noopener noreferrer" class="social-link whatsapp">
+                                <span>💬</span>
+                            </a>
+                            <a href="#" class="social-link facebook">
+                                <span>f</span>
+                            </a>
+                            <a href="#" class="social-link linkedin">
+                                <span>in</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    <p>&copy; 2026 RBS Biologicals. All rights reserved.</p>
+                </div>
+                <div class="credits">
+                    <p>Powered By RBS Biologicals</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+        </div>
+    
+    <script src="script.js"></script>
+    <script>
+        function filterBlogPosts(category) {
+            const posts = document.querySelectorAll('.blog-card-full');
+            const buttons = document.querySelectorAll('.blog-categories .category-btn');
+            
+            // Update active button
+            buttons.forEach(btn => btn.classList.remove('active'));
+            event.target.classList.add('active');
+            
+            // Filter posts
+            posts.forEach(post => {
+                if (category === 'all' || post.dataset.category === category.toLowerCase()) {
+                    post.style.display = 'block';
+                } else {
+                    post.style.display = 'none';
+                }
+            });
+        }
+        
+        function subscribeNewsletter(event) {
+            event.preventDefault();
+            const email = event.target.querySelector('input[type="email"]').value;
+            showNotification('Thank you for subscribing! We\'ll keep you updated.');
+            event.target.reset();
+        }
+        
+        function sharePost(postId) {
+            showNotification('Share functionality coming soon!');
+        }
+    </script>
+    
+    <style>
+        .blog-grid-full {
+            display: grid;
+            gap: 40px;
+            margin-bottom: 60px;
+        }
+        
+        .blog-card-full {
+            background-color: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: grid;
+            grid-template-columns: 300px 1fr;
+        }
+        
+        .blog-card-full:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .blog-image-large {
+            background: linear-gradient(135deg, var(--primary-blue), #025a9e);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+        }
+        
+        .blog-emoji-large {
+            font-size: 5em;
+            filter: brightness(0) invert(1);
+        }
+        
+        .blog-content-full {
+            padding: 40px;
+        }
+        
+        .blog-content-full h2 {
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .blog-excerpt {
+            font-size: 1.1em;
+            color: var(--text-gray);
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+        
+        .blog-content-text {
+            margin-bottom: 25px;
+        }
+        
+        .blog-actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .share-btn {
+            background-color: #f8f9fa;
+            border: 1px solid var(--border-gray);
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.2s ease;
+        }
+        
+        .share-btn:hover {
+            background-color: var(--primary-blue);
+            color: white;
+        }
+        
+        .blog-newsletter {
+            background: linear-gradient(135deg, var(--primary-blue), #025a9e);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .newsletter-content h2 {
+            font-size: 2em;
+            margin-bottom: 15px;
+        }
+        
+        .newsletter-form {
+            display: flex;
+            gap: 15px;
+            max-width: 500px;
+            margin: 30px auto 0;
+        }
+        
+        .newsletter-form input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 5px;
+            font-size: 1em;
+        }
+        
+        .blog-categories-info {
+            margin-top: 60px;
+        }
+        
+        .category-info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+        
+        .category-info-card {
+            background-color: #f8f9fa;
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        
+        .category-info-card h3 {
+            font-size: 1.3em;
+            margin-bottom: 15px;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-card-full {
+                grid-template-columns: 1fr;
+            }
+            
+            .blog-image-large {
+                padding: 30px;
+            }
+            
+            .blog-emoji-large {
+                font-size: 3em;
+            }
+            
+            .blog-content-full {
+                padding: 30px 20px;
+            }
+            
+            .blog-content-full h2 {
+                font-size: 1.5em;
+            }
+            
+            .newsletter-form {
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .category-info-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+    </style>
+</body>
+</html>
