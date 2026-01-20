@@ -31,9 +31,11 @@ foreach ($pages as $phpFile => $htmlFile) {
     ob_start();
 
     // Include the file
+
     // We mock certain GET parameters to avoid errors if the page expects them
     $_GET['id'] = 1; // Default to ID 1 for detail pages
     $_SERVER['REQUEST_URI'] = '/' . $phpFile;
+    $_SERVER['REQUEST_METHOD'] = 'GET'; // Explicitly set request method to GET
     
     include $phpFile;
 
