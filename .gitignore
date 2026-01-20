@@ -1,0 +1,25 @@
+# System files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs
+*.log
+error_log
+
+# Dependencies
+vendor/
+node_modules/
+
+# Environment
+.env
+
+# Uploads (keep the directory but ignore content)
+uploads/*
+!uploads/.gitkeep
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
