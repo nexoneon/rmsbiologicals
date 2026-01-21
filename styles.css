@@ -2034,4 +2034,224 @@ a:hover {
   .product-detail-actions .btn {
     width: 100%;
   }
+}/* Product Detail Page Specific Styles */
+.product-detail-container {
+    max-width: 1200px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.breadcrumb {
+    margin-bottom: 30px;
+    color: var(--text-gray);
+    font-size: 0.95em;
+}
+
+.breadcrumb a {
+    color: var(--primary-blue);
+    text-decoration: none;
+}
+
+.product-detail-grid {
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: start;
+}
+
+.product-image-section {
+    position: sticky;
+    top: 100px;
+}
+
+.product-main-image {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    text-align: center;
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 400px;
+}
+
+.product-main-image img {
+    max-width: 100%;
+    max-height: 500px;
+    width: auto;
+    display: block;
+    margin: 0 auto;
+    transition: transform 0.5s ease;
+    object-fit: contain;
+}
+
+.product-main-image:hover img {
+    transform: scale(1.05);
+}
+
+.zoom-icon {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: white;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    font-size: 18px;
+    transition: opacity 0.3s;
+}
+
+.product-main-image:hover .zoom-icon {
+    opacity: 1;
+}
+
+.product-info-section h1 {
+    font-size: 2.5em;
+    color: var(--text-dark);
+    margin-bottom: 15px;
+    line-height: 1.2;
+}
+
+.product-subtitle {
+    font-size: 1.1em;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+.product-section {
+    margin-bottom: 30px;
+    padding-bottom: 25px;
+    border-bottom: 1px solid #eee;
+}
+
+.product-section:last-child {
+    border-bottom: none;
+}
+
+.product-section h3 {
+    font-size: 1.2em;
+    color: var(--primary-blue);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.composition-text {
+    line-height: 1.8;
+    color: var(--text-dark);
+}
+
+.benefits-list {
+    list-style: none;
+    padding: 0;
+}
+
+.benefits-list li {
+    position: relative;
+    padding-left: 25px;
+    margin-bottom: 12px;
+    line-height: 1.5;
+    color: var(--text-dark);
+}
+
+.benefits-list li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--accent-green);
+    font-weight: bold;
+    font-size: 1.1em;
+}
+
+.dosage-info,
+.sizes-info {
+    font-size: 1.1em;
+    color: var(--text-dark);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.dosage-info strong,
+.sizes-info strong {
+    color: var(--primary-blue);
+    min-width: 120px;
+}
+
+.product-meta {
+    margin: 30px 0;
+    padding: 25px;
+    background: #f8f9fa;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.product-category {
+    font-size: 1.1em;
+    color: var(--text-gray);
+    margin: 0;
+}
+
+.product-category a {
+    color: var(--primary-blue);
+    font-weight: 500;
+}
+
+.product-price {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+.product-actions {
+    display: flex;
+    gap: 20px;
+}
+
+.product-actions .btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+@media (max-width: 900px) {
+    .product-detail-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .product-image-section {
+        position: static;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .product-image-section .glossy-card {
+        min-height: auto;
+    }
+
+    .product-meta {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .product-price {
+        margin-top: 10px;
+    }
+
+    .product-actions {
+        flex-direction: column;
+    }
 }

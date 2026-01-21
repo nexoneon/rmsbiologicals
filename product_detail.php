@@ -41,6 +41,225 @@ $page_title = $product['name'] . ' - ' . $company_info['name'];
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
     
 </head>
+<style>
+    /* Critical CSS for Product Detail Layout */
+    .product-detail-container {
+        max-width: 1200px;
+        margin: 40px auto;
+        padding: 0 20px;
+    }
+
+    .breadcrumb {
+        margin-bottom: 30px;
+        color: #64748b;
+        font-size: 0.95em;
+    }
+
+    .breadcrumb a {
+        color: #1e3a8a;
+        text-decoration: none;
+    }
+
+    .product-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1.5fr;
+        gap: 50px;
+        align-items: start;
+    }
+
+    .product-image-section {
+        position: sticky;
+        top: 100px;
+    }
+
+    .product-main-image {
+        position: relative;
+        overflow: hidden;
+        padding: 20px;
+        text-align: center;
+        background: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 400px;
+        border-radius: 16px;
+        box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+    }
+
+    .product-main-image img {
+        max-width: 100%;
+        max-height: 500px;
+        width: auto;
+        display: block;
+        margin: 0 auto;
+        transition: transform 0.5s ease;
+        object-fit: contain;
+    }
+
+    .product-main-image:hover img {
+        transform: scale(1.05);
+    }
+
+    .zoom-icon {
+        position: absolute;
+        bottom: 20px;
+        right: 20px;
+        background: white;
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        opacity: 0;
+        font-size: 18px;
+        transition: opacity 0.3s;
+    }
+
+    .product-main-image:hover .zoom-icon {
+        opacity: 1;
+    }
+
+    .product-info-section h1 {
+        font-size: 2.5em;
+        color: #1e293b;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .product-subtitle {
+        font-size: 1.1em;
+        color: #64748b;
+        margin-bottom: 30px;
+        line-height: 1.6;
+    }
+
+    .product-section {
+        margin-bottom: 30px;
+        padding-bottom: 25px;
+        border-bottom: 1px solid #eee;
+    }
+
+    .product-section:last-child {
+        border-bottom: none;
+    }
+
+    .product-section h3 {
+        font-size: 1.2em;
+        color: #1e3a8a;
+        margin-bottom: 15px;
+        font-weight: 600;
+    }
+
+    .composition-text {
+        line-height: 1.8;
+        color: #1e293b;
+    }
+
+    .benefits-list {
+        list-style: none;
+        padding: 0;
+    }
+
+    .benefits-list li {
+        position: relative;
+        padding-left: 25px;
+        margin-bottom: 12px;
+        line-height: 1.5;
+        color: #1e293b;
+    }
+
+    .benefits-list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #25d366;
+        font-weight: bold;
+        font-size: 1.1em;
+    }
+
+    .dosage-info, .sizes-info {
+        font-size: 1.1em;
+        color: #1e293b;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+    }
+
+    .dosage-info strong, .sizes-info strong {
+        color: #1e3a8a;
+        min-width: 120px;
+    }
+
+    .product-meta {
+        margin: 30px 0;
+        padding: 25px;
+        background: #f8f9fa;
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .product-category {
+        font-size: 1.1em;
+        color: #64748b;
+        margin: 0;
+    }
+
+    .product-category a {
+        color: #1e3a8a;
+        font-weight: 500;
+    }
+
+    .product-price {
+        font-size: 2.2em;
+        font-weight: 700;
+        color: #1e3a8a;
+    }
+
+    .product-actions {
+        display: flex;
+        gap: 20px;
+    }
+
+    .product-actions .btn {
+        flex: 1;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+    }
+
+    @media (max-width: 900px) {
+        .product-detail-grid {
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+        
+        .product-image-section {
+            position: static;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .product-meta {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        
+        .product-price {
+            margin-top: 10px;
+        }
+        
+        .product-actions {
+            flex-direction: column;
+        }
+    }
+</style>
 <body>
     <div class="app">
         <?php renderHeader('products'); ?>
