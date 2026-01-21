@@ -850,6 +850,7 @@ try {
                         <thead>
                             <tr>
                                 <th>ID</th>
+                                <th>Image</th>
                                 <th>Name</th>
                                 <th>Category</th>
                                 <th>Price</th>
@@ -862,6 +863,13 @@ try {
                             <?php foreach ($products as $product): ?>
                                 <tr>
                                     <td><?php echo $product['id']; ?></td>
+                                    <td>
+                                        <?php if (!empty($product['image_url'])): ?>
+                                            <img src="uploads/<?php echo htmlspecialchars($product['image_url']); ?>" alt="Product" style="width: 50px; height: 50px; object-fit: cover; border-radius: 4px;">
+                                        <?php else: ?>
+                                            <span style="color: #999; font-size: 12px;">No Image</span>
+                                        <?php endif; ?>
+                                    </td>
                                     <td><?php echo htmlspecialchars($product['name']); ?></td>
                                     <td><?php echo htmlspecialchars($product['category']); ?></td>
                                     <td>₹<?php echo number_format($product['price'], 2); ?></td>
